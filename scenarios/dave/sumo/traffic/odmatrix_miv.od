@@ -1,0 +1,23 @@
+$OM;D2
+*vehicle type
+0
+*from-time  to-time
+00.00	01.00
+*factor
+1.0
+
+	north	south	160
+	north	east	160
+	north	west	160
+
+	south	east	160
+	south	west	160
+	south	north	160
+
+	east	north	160
+	east	south	160
+	east	west	2200
+
+	west	north	160
+	west	south	160
+	west	east	2200

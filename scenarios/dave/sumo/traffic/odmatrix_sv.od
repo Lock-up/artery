@@ -1,0 +1,23 @@
+$OM;D2
+*vehicle type
+1
+*from-time  to-time
+00.00 01.00
+*factor
+1.0
+
+	north	south	5
+	north	east	15
+	north	west	15
+
+	south	east	15
+	south	west	15
+	south	north	5
+
+	east	north	15
+	east	south	15
+	east	west	400
+
+	west	north	15
+	west	south	15
+	west	east	400

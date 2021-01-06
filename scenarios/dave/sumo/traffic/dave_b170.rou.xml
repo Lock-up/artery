@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<routes>
+   <vType id="vtype0" accel="2.6" decel="4.5" sigma="0.5" length="2.5" minGap="2.5" maxSpeed="30" color="1,1,0"/>
+   <vType id="police" vClass="authority" length="5" maxSpeed="60" speedFactor="1.5" minGap="0.5" guiShape="police"/>
+
+   <flow id="flow0" type="vtype0" begin="0" probability="0.1" from="562753703#0" to="572386711#1"/>
+   <!-- <flow id="flow1" type="vtype0" begin="0" probability="0.1" from="572112882" to="-562753703#1"/> -->
+   <trip id="police0" type="police" from="562753703#0" to="572386711#1" depart="3" departSpeed="max"/>
+</routes>

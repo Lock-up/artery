@@ -1,0 +1,10 @@
+<configuration>
+	<input>
+		<net-file value="../net/dave_b170_reduced.net.xml"/>
+		<route-files value="../traffic/od_trips.odtrips.xml"/>
+		<additional-files value="../additional/vtypes.add.xml"/>
+	</input>
+	<output>
+		<output-file value="../traffic/od_routes.rou.xml"/>
+	</output>
+</configuration>

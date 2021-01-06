@@ -1,0 +1,10 @@
+<configuration>
+	<input>
+		<taz-files value="../traffic/dave_taz.xml"/>
+		<od-matrix-files value="../traffic/odmatrix_miv.od, ../traffic/odmatrix_sv.od"/>
+	</input>
+	
+	<output>
+		<output-file value="../traffic/od_trips.odtrips.xml"/>
+	</output>
+</configuration>

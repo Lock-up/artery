@@ -1,0 +1,13 @@
+add_opp_run(dave_b170 CONFIG omnetpp.ini)
+add_opp_test(dave_b170 SUFFIX inet CONFIG inet SIMTIME_LIMIT 20s)
+add_opp_test(dave_b170 SUFFIX security CONFIG inet_security SIMTIME_LIMIT 20s)
+add_opp_test(dave_b170 SUFFIX inet-mco CONFIG inet_mco SIMTIME_LIMIT 20s)
+add_opp_test(dave_b170 SUFFIX inet-mixed-vehicles CONFIG inet_multiple_vehicle_types SIMTIME_LIMIT 20s)
+add_opp_test(dave_b170 SUFFIX inet-nakagami CONFIG inet_nakagami SIMTIME_LIMIT 20s)
+add_opp_test(dave_b170 SUFFIX inet-rsu CONFIG inet_rsu SIMTIME_LIMIT 20s)
+add_opp_test(dave_b170 SUFFIX veins CONFIG veins SIMTIME_LIMIT 20s)
+add_opp_test(dave_b170 SUFFIX veins-rsu CONFIG veins_rsu SIMTIME_LIMIT 20s)
+
+if(WITH_ENVMOD)
+    add_opp_test(dave_b170 SUFFIX envmod CONFIG envmod SIMTIME_LIMIT 20s)
+endif()

@@ -1,0 +1,12 @@
+<configuration>
+	<input>
+		<net-file value = "../net/dave_b170_reduced.net.xml"/>
+		<route-files value = "../traffic/od_routes.rou.xml"/>
+		<!--<additional-files value ="../net/dave.poly.add.xml"/>-->
+		<gui-settings-file value ="../additional/view.add.xml"/>
+	</input>
+	<time>
+		<begin value = "0"/>
+		<end value = "3600"/>
+	</time>
+</configuration>

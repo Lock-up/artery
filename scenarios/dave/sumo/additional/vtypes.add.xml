@@ -1,0 +1,16 @@
+<add>
+	<vType id="0"
+		vClass="passenger"
+		speedFactor="normc(1,0.1,0.8,1.2)"
+		maxSpeed="50"
+		tau="1.0"
+		sigma="0.5"/>
+		
+	<vType id="1"
+		vClass="trailer"
+		length="18.75"
+		guiShape="truck/trailer"
+		speedFactor="normc(1.125,0.0375,0.95,1.2)"
+		tau="1.0"
+		sigma="0.5"/>
+</add>

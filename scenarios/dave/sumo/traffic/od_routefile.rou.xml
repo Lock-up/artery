@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 12/10/20 09:36:51 by Eclipse SUMO od2trips Version 1.7.0
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/od2tripsConfiguration.xsd">
+
+    <input>
+        <taz-files value="sumo/config/../traffic/dave_taz.xml"/>
+        <od-matrix-files value="sumo/config/../traffic/odmatrix_miv.od,sumo/config/../traffic/odmatrix_sv.od"/>
+    </input>
+
+    <output>
+        <output-file value="sumo/config/../traffic/od_routefile.rou.xml"/>
+    </output>
+
+</configuration>
+-->
+
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+    <trip id="1" depart="400.80" from="318372934" to="-555845926" type="0" fromTaz="east" toTaz="south" departLane="free" departSpeed="max"/>
+    <trip id="5" depart="401.49" from="572112882" to="gneE0.528" type="0" fromTaz="north" toTaz="west" departLane="free" departSpeed="max"/>
+    <trip id="2" depart="654.29" from="318372934" to="gneE0.528" type="0" fromTaz="east" toTaz="west" departLane="free" departSpeed="max"/>
+    <trip id="9" depart="759.41" from="3194941" to="317210106" type="0" fromTaz="west" toTaz="east" departLane="free" departSpeed="max"/>
+    <trip id="10" depart="869.60" from="3194941" to="572386711#1" type="0" fromTaz="west" toTaz="north" departLane="free" departSpeed="max"/>
+    <trip id="7" depart="1086.27" from="555845926" to="572386711#1" type="0" fromTaz="south" toTaz="north" departLane="free" departSpeed="max"/>
+    <trip id="4" depart="1164.16" from="572112882" to="-555845926" type="0" fromTaz="north" toTaz="south" departLane="free" departSpeed="max"/>
+    <trip id="11" depart="1848.48" from="3194941" to="-555845926" type="0" fromTaz="west" toTaz="south" departLane="free" departSpeed="max"/>
+    <trip id="8" depart="2039.96" from="555845926" to="gneE0.528" type="1" fromTaz="south" toTaz="west" departLane="free" departSpeed="max"/>
+    <trip id="0" depart="2488.08" from="318372934" to="572386711#1" type="0" fromTaz="east" toTaz="north" departLane="free" departSpeed="max"/>
+    <trip id="3" depart="2950.16" from="572112882" to="317210106" type="0" fromTaz="north" toTaz="east" departLane="free" departSpeed="max"/>
+    <trip id="6" depart="3565.79" from="555845926" to="317210106" type="0" fromTaz="south" toTaz="east" departLane="free" departSpeed="max"/>
+</routes>

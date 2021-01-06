@@ -1,0 +1,21 @@
+<tazs>
+    <taz id="south">
+      <tazSource id="555845926" weight="1"/>
+      <tazSink id="-555845926" weight="1"/>
+    </taz>
+	
+	<taz id="north">
+      <tazSource id="30585074#1" weight="1"/>
+      <tazSink id="137942319" weight="1"/>
+    </taz>
+	
+	<taz id="east">
+      <tazSource id="22565542" weight="1"/>
+      <tazSink id="317210106" weight="1"/>
+    </taz>
+	
+	<taz id="west">
+      <tazSource id="3194941" weight="1"/>
+      <tazSink id="gneE0.528" weight="1"/>
+    </taz>
+</tazs>
