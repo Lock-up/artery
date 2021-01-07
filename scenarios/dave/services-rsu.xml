@@ -3,6 +3,9 @@
     <service type="artery.application.RsuCaService" name="RsuCA">
         <listener port="2001" />
     </service>
+    <service type="artery.application.RsuCaLogService" name="RsuCALog">
+        <listener port="2001" />
+    </service>
     <!--
     <service type="artery.application.ExampleService">
 		<listener port="4711" />
