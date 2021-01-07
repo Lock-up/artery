@@ -17,6 +17,7 @@ add_library(core SHARED
     application/NetworkInterface.cc
     application/NetworkInterfaceTable.cc
     application/RsuCaService.cc
+    application/RsuCaLogService.cc
     application/StationaryMiddleware.cc
     application/StoryboardSignal.cc
     application/Timer.cc
