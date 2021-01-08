@@ -21,10 +21,10 @@
 namespace artery
 {
 
-class GeoPosition;
+// class GeoPosition;
 class Identity;
-class LocalDynamicMap;
-class NetworkInterfaceTable;
+// class LocalDynamicMap;
+// class NetworkInterfaceTable;
 class Timer;
 
 class RsuCaLogService : public ItsG5BaseService
@@ -36,6 +36,7 @@ class RsuCaLogService : public ItsG5BaseService
 
     private:
         const Identity* mIdentity = nullptr;
+        const Timer* mTimer = nullptr;
         std::ofstream mCamLogfile;
 };
 

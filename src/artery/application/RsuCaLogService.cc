@@ -31,10 +31,18 @@ void RsuCaLogService::initialize()
 {
     ItsG5BaseService::initialize();
     mIdentity = &getFacilities().get_const<Identity>();
+    mTimer = &getFacilities().get_const<Timer>();
 
     // Open CAM logfile
-    const std::string filename = std::to_string(mIdentity->application).append("_cams.log");
-    mCamLogfile.open(filename.c_str(), std::ios::app);
+    char buffer [15];
+    time_t tt = std::chrono::system_clock::to_time_t ( std::chrono::system_clock::now() );
+    struct tm * timeinfo = localtime (&tt);
+    strftime (buffer,15,"%y%m%d_%H%M%S_", timeinfo);  
+
+    const std::string filename = buffer + std::to_string(mIdentity->application).append("_cams.json");
+    mCamLogfile.open(filename.c_str(), std::ios::trunc);
+    mCamLogfile << "[\n]";
+    mCamLogfile.flush();
 }
 
 void RsuCaLogService::finish()
@@ -53,9 +61,37 @@ void RsuCaLogService::indicate(const vanetza::btp::DataIndication& ind, std::uni
         CaObject obj = visitor.shared_wrapper;
         emit(scSignalCamLogged, &obj);
 
-        // vanetza::facilities::print_indented(EV_INFO, *cam, " ");
-        // vanetza::facilities::print_indented(mCamLogfile, *cam, " ");
-        mCamLogfile << vanetza::facilities::format_json(*cam) << "\n";
+        const uint64_t etsiBaseTimeStampInMs = boost::posix_time::to_time_t(vanetza::Clock::epoch()) * 1000;
+        const uint64_t etsiTimeStampInMs = countTaiMilliseconds(mTimer->getCurrentTime()); 
+        const uint64_t simruntimeInMs = omnetpp::simTime().inUnit(SimTimeUnit::SIMTIME_MS);
+
+        long pos = mCamLogfile.tellp();
+        if(pos < 4) {
+            mCamLogfile.seekp (pos-1);
+            mCamLogfile
+                << "{\"type\": \"cam\", \"ts_unix\": " 
+                << etsiBaseTimeStampInMs + etsiTimeStampInMs
+                << ", \"ts_etsi\": "
+                << etsiTimeStampInMs
+                << ", \"simRuntime\": "
+                << simruntimeInMs
+                << ", \"data\": "
+                << vanetza::facilities::format_json(*cam) << "}\n]";
+        }
+        else {
+            mCamLogfile.seekp (pos-2);
+            mCamLogfile
+                << ",\n"
+                << "{\"type\": \"cam\", \"ts_unix\": " 
+                << etsiBaseTimeStampInMs + etsiTimeStampInMs
+                << ", \"ts_etsi\": "
+                << etsiTimeStampInMs
+                << ", \"simRuntime\": "
+                << simruntimeInMs
+                << ", \"data\": "
+                << vanetza::facilities::format_json(*cam) << "}\n]";
+        }
+        mCamLogfile.flush();
     }
 }
 
